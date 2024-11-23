@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedAlpha Tech Private Limited</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.0/three.min.js"></script>
+
+  <link rel="icon" href="redalpha.ico" type="image/x-icon">
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+/* Gradient Background */
+#animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  linear-gradient(
+    160deg,
+    #a54e07,
+    #b47e11,
+    #fef1a2,
+    #bc881b,
+    #a54e07
+  );
+    z-index: -1;
+}
+
+    .container {
+            width: 425px;
+            height: 642px;
+            margin-top: 215px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-radius: 3px;
+            border: 1px solid #396afc;
+            background: linear-gradient(to right, #005c97, #363795);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .container form .descr {
+            font-size: 60px;
+            font-weight: 500;
+            color: #fbfafa;
+            margin-bottom: 25px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input,
+        textarea {
+            margin: 1em 0 1em 0;
+            width: 300px;
+            position: relative;
+        }
+
+        .input input,
+        textarea {
+            font-size: 100%;
+            padding: 0.7em;
+            outline: none;
+            color: #e8e8e8;
+            border: none;
+            border-bottom: 2px solid #e8e8e8;
+            background: transparent;
+            border-radius: none;
+            width: 100%;
+            resize: none;
+            appearance: none;
+        }
+
+        .input label {
+            font-size: 100%;
+            position: absolute;
+            left: 0.7em;
+            color: #e8e8e8;
+            top: 0.7em;
+            pointer-events: none;
+            transition: all 0.5s ease;
+            text-transform: uppercase;
+        }
+
+        .input :is(input:focus, input:valid, select:focus, select:valid, textarea:focus, textarea:valid)~label {
+            transform: translateY(-1.5em) scale(0.9);
+            color: #e8e8e8;
+        }
+
+        /* Adjust border color when focused */
+        .input :is(input:focus, textarea:focus, select:focus) {
+            border-bottom-color: #396afc;
+        }
+
+        /* Dropdown-specific adjustments */
+        .input select {
+            cursor: pointer;
+        }
+
+        .form button {
+            color: #e8e8e8;
+            font-size: 15px;
+            align-self: flex-start;
+            padding: 0.6em;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 50px;
+            background: transparent;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form button:before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #e8e8e8;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .form button:hover:before {
+            opacity: 0.2;
+        }
+
+        .form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Styling the dropdown */
+        .input select {
+            font-size: 100%;
+            padding: 1.7em;
+            outline: none;
+            color: #ef7e7e;
+            border: none;
+            border-bottom: 2px solid #e8e8e8;
+            background: transparent;
+            width: 100%;
+            appearance: none;
+        }
+
+        .input select:focus {
+            border-color: rgb(37, 37, 211);
+        }
+
+        .input select~label {
+            font-size: 100%;
+            position: absolute;
+            left: 0;
+            color: #e8e8e8;
+            padding: 0.7em;
+            margin-left: 0.1em;
+            pointer-events: none;
+            transition: all 0.5s ease;
+            text-transform: uppercase;
+        }
+
+        .input select:focus~label,
+        .input select:valid~label {
+            transform: translateY(-50%) scale(.9);
+            margin: 0em;
+            padding: 0.4em;
+            background: transparent;
+        }
+
+    /* Go Back Button */
+    .go-back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #363795;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .go-back-btn:hover {
+      background-color: #005c97;
+    }
+
+    
+
+   /* From Uiverse.io by Creatlydev */ 
+.button {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--clr);
+  color: #fff;
+  border-radius: 10rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s;
+}
+
+.button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: var(--clr);
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: #363795;
+}
+
+.button:hover .button__icon-wrapper {
+  color: #005c97;
+}
+
+.button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.button:hover .button__icon-svg:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.button:hover .button__icon-svg--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+      }
+
+      .input input,
+      .input select,
+      .input textarea {
+        font-size: 14px;
+      }
+
+    }
+    .whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.whatsapp-btn img {
+    width: 35px;
+    height: 35px;
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .whatsapp-btn img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .whatsapp-btn img {
+        width: 25px;
+        height: 25px;
+    }
+}
+  </style>
+</head>
+<body>
+  <div id="animation-container"></div>
+  <!-- Go Back Button -->
+  <a href="index.html" class="go-back-btn">Go Back to Home</a>
+
+  <!-- Contact Form -->
+  <div class="container">
+    <form class="form">
+      <div class="descr">Contact us</div>
+
+      <!-- First Name -->
+      <div class="input">
+        <input required autocomplete="off" type="text" name="name" id="name" />
+        <label for="name">First Name</label>
+      </div>
+
+      <!-- Email -->
+      <div class="input">
+        <input required autocomplete="off" type="email" name="email" id="email" />
+        <label for="email">E-mail</label>
+      </div>
+
+      <!-- Phone Number -->
+      <div class="input">
+        <input required autocomplete="off" type="tel" name="phone" id="phone" />
+        <label for="phone">Phone Number</label>
+      </div>
+
+      <!-- Service Dropdown -->
+      <div class="input">
+        <select name="service" id="service" required>
+          <option value="" disabled selected></option>
+          <option value="Website">Website</option>
+          <option value="App">App</option>
+          <option value="AI&ML">AI&ML</option>
+          <option value="UI&UX">UI&UX</option>
+          <option value="Graphics Design">Graphics Design</option>
+          <option value="Video Editing">Video Editing</option>
+          <option value="Digital Marketing">Digital Marketing</option>
+          <option value="Others">Others</option>
+        </select>
+        <label for="service">Service</label>
+      </div>
+
+      <!-- Custom Message -->
+      <div class="input">
+        <textarea autocomplete="off" name="message" id="message" placeholder="Custom Message (Optional)"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+   
+<button href="#" class="button" style="--clr: #7808d0">
+  <span class="button__icon-wrapper">
+    <svg
+      viewBox="0 0 14 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="button__icon-svg"
+      width="10"
+    >
+      <path
+        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+        fill="currentColor"
+      ></path>
+    </svg>
+
+    <svg
+      viewBox="0 0 14 15"
+      fill="none"
+      width="10"
+      xmlns="http://www.w3.org/2000/svg"
+      class="button__icon-svg button__icon-svg--copy"
+    >
+      <path
+        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+        fill="currentColor"
+      ></path>
+    </svg>
+  </span>
+Submit Now
+</button>
+
+    </form>
+         <!-- WhatsApp Button -->
+         <a href="https://wa.me/6296520890" target="_blank" class="whatsapp-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+        </a>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>// Three.js Star Animation
+      // Scene Setup
+      const container = document.getElementById('animation-container');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    container.appendChild(renderer.domElement);
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    scene.add(ambientLight);
+
+    // Sun (Daytime)
+    const sunGeometry = new THREE.SphereGeometry(50, 32, 32);
+    const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xffcc00 });
+    const sun = new THREE.Mesh(sunGeometry, sunMaterial);
+    sun.position.set(0, 200, -500);
+    scene.add(sun);
+
+    // Moon (Nighttime)
+    const moonGeometry = new THREE.SphereGeometry(30, 32, 32);
+    const moonMaterial = new THREE.MeshBasicMaterial({ color: 0xbbbbbb });
+    const moon = new THREE.Mesh(moonGeometry, moonMaterial);
+    moon.position.set(0, -200, -500);
+    scene.add(moon);
+
+    // Gradient Background: Texture Canvas
+    const gradientCanvas = document.createElement("canvas");
+    gradientCanvas.width = 2;
+    gradientCanvas.height = 2;
+    const gradientContext = gradientCanvas.getContext("2d");
+    const gradientTexture = new THREE.CanvasTexture(gradientCanvas);
+
+    const gradientMaterial = new THREE.MeshBasicMaterial({ map: gradientTexture });
+    const gradientPlane = new THREE.PlaneGeometry(2000, 2000);
+    const gradientMesh = new THREE.Mesh(gradientPlane, gradientMaterial);
+    gradientMesh.rotation.x = -Math.PI / 2;
+    gradientMesh.position.y = -200;
+    scene.add(gradientMesh);
+
+    // Stars for Night
+    const starGeometry = new THREE.BufferGeometry();
+    const starCount = 1000;
+    const starVertices = [];
+    for (let i = 0; i < starCount; i++) {
+        const x = (Math.random() - 0.5) * 2000;
+        const y = (Math.random() - 0.5) * 2000;
+        const z = (Math.random() - 0.5) * 2000;
+        starVertices.push(x, y, z);
+    }
+    starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+
+    const starMaterial = new THREE.PointsMaterial({
+        color: 0xffffff,
+        size: 2,
+        transparent: true,
+        opacity: 0.8,
+    });
+
+    const stars = new THREE.Points(starGeometry, starMaterial);
+    scene.add(stars);
+
+    // Animation Parameters
+    let time = 0; // Time progression variable for day-night cycle
+
+    // Update Gradient Function
+    function updateGradient(time) {
+        const gradient = gradientContext.createLinearGradient(0, 0, 0, 2);
+        if (time < 0.5) {
+            // Sunrise
+            gradient.addColorStop(0, "#FF4500"); // Orange
+            gradient.addColorStop(1, "#FFD700"); // Yellow
+        } else if (time < 1) {
+            // Daytime
+            gradient.addColorStop(0, "#87CEEB"); // Sky blue
+            gradient.addColorStop(1, "#ADD8E6"); // Light blue
+        } else if (time < 1.5) {
+            // Sunset
+            gradient.addColorStop(0, "#FFA07A"); // Light salmon
+            gradient.addColorStop(1, "#FF4500"); // Orange
+        } else {
+            // Nighttime
+            gradient.addColorStop(0, "#000033"); // Deep blue
+            gradient.addColorStop(1, "#191970"); // Midnight blue
+        }
+        gradientContext.fillStyle = gradient;
+        gradientContext.fillRect(0, 0, 2, 2);
+        gradientTexture.needsUpdate = true;
+    }
+
+    // Animation Loop
+    function animate() {
+        requestAnimationFrame(animate);
+
+        // Update Time
+        time += 0.002;
+        if (time > 2) time = 0; // Reset time for continuous cycle
+
+        // Move Sun and Moon
+        const sunY = Math.sin(Math.PI * time) * 300 - 100;
+        const moonY = Math.sin(Math.PI * (time + 1)) * 300 - 100;
+
+        sun.position.y = sunY;
+        moon.position.y = moonY;
+
+        // Update Star Visibility
+        stars.material.opacity = time > 1.5 || time < 0.5 ? 1 : 0;
+
+        // Update Gradient Background
+        updateGradient(time);
+
+        // Rotate Stars Slightly
+        stars.rotation.y += 0.0005;
+
+        renderer.render(scene, camera);
+    }
+
+    // Handle Window Resize
+    window.addEventListener("resize", () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Start Animation
+    animate();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedAlpha Tech Private Limited</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Add this in the head section of your HTML file to include Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.0/three.min.js"></script>
+
+  <link rel="icon" href="redalpha.ico" type="image/x-icon">
+    <style>
+        .all {
+            background-color: #971c274f;
+        }
+
+        /*==========================*/
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        i {
+            margin-right: 10px;
+        }
+
+        /*----------bootstrap-navbar-css------------*/
+        .navbar-brand,
+        .nav-link {
+            color: #e70c0c !important;
+            /* Set text color to white */
+            font-weight: bold;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            /* Adjust logo size as needed */
+        }
+
+        .navbar-brand:hover,
+        .nav-link:hover {
+            color: #6b0505 !important;
+            /* Hover color for navbar items */
+        }
+
+        .navbar {
+            background-color: #004d99;
+            border-bottom: 3px solid #ffcc00;
+            box-shadow: 0 4px 8px skyblue;
+            color: rgb(255, 0, 55);
+            cursor: pointer;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #004d99;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%280, 0, 0, 0.5%29" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+        }
+
+        .navbar-nav .nav-link {
+            color: rgb(234, 7, 7);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .navbar-nav {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00;
+        }
+
+        .me-2 {
+            margin-right: .0.9rem !important;
+            cursor: pointer !important;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .navbar-nav .nav-item {
+                margin-bottom: 10px;
+            }
+
+            .contact-info a {
+                font-size: 13px;
+            }
+
+            .school-name {
+                font-size: 16px;
+            }
+
+            .animated-logo {
+                width: 50px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar {
+                padding: 10px;
+            }
+
+
+
+            .contact-info a {
+                font-size: 13px;
+            }
+
+            .school-name {
+                font-size: 16px;
+            }
+
+            .animated-logo {
+                width: 50px;
+            }
+        }
+
+
+        .navbar a {
+            color: #fef8f8;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+        }
+
+        .container {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .navbar a:hover {
+            background-color: #0066cc;
+            color: #ffcc00;
+            border-radius: 5px;
+        }
+
+        .navbar-toggler {
+            border-color: #ffcc00;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff;
+        }
+
+        .nav-item {
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .navbar-nav .nav-link a {
+            color: #004d99;
+        }
+
+        .navbar-nav .nav-link i {
+            font-size: 24px;
+            padding-right: 10px;
+            color: #004d99;
+        }
+
+
+        /* Active link styling */
+        .navbar .nav-link.active {
+            background-color: #f7fb09;
+            color: #004d99;
+            border-radius: 5px;
+        }
+
+
+        /* blog body */
+        .container {
+            padding-top: 20px;
+            height: auto;
+            box-sizing: border-box;
+        }
+
+
+        .init {
+            padding-top: 100px;
+        }
+
+        .init h1 {
+            text-align: center;
+            color: rgb(113, 39, 39);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+        }
+
+        .init h3 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .btn {
+            height: 2.8em;
+            width: 9em;
+            background: transparent;
+            -webkit-animation: jello-horizontal 0.9s both;
+            animation: jello-horizontal 0.9s both;
+            border: 2px solid #016dd9;
+            outline: none;
+            color: #016dd9;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .btn:hover {
+            background: red;
+            color: #ffffff;
+            animation: squeeze3124 0.9s both;
+            border: 2px solid red;
+        }
+
+        @keyframes squeeze3124 {
+            0% {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+
+            30% {
+                -webkit-transform: scale3d(1.25, 0.75, 1);
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            40% {
+                -webkit-transform: scale3d(0.75, 1.25, 1);
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            50% {
+                -webkit-transform: scale3d(1.15, 0.85, 1);
+                transform: scale3d(1.15, 0.85, 1);
+            }
+
+            65% {
+                -webkit-transform: scale3d(0.95, 1.05, 1);
+                transform: scale3d(0.95, 1.05, 1);
+            }
+
+            75% {
+                -webkit-transform: scale3d(1.05, 0.95, 1);
+                transform: scale3d(1.05, 0.95, 1);
+            }
+
+            100% {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        /* General Styling remains unchanged */
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .web-img,
+            .app-img {
+                width: 100%;
+                height: auto;
+            }
+
+            .web-desc,
+            .app-desc {
+                width: 100%;
+                text-align: center;
+            }
+
+            .btn {
+                width: auto;
+                margin: 10px 0;
+            }
+
+            /* Stack images and buttons first */
+            .services .web-img+.btn,
+            .services .app-img+.btn {
+                order: 1;
+            }
+
+            .services .web-desc,
+            .services .app-desc {
+                order: 2;
+            }
+
+            .web-img,
+            .app-img {
+                order: 0;
+            }
+        }
+
+        /* For small mobile screens */
+        @media (max-width: 576px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .web-img,
+            .app-img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .btn {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .web-desc,
+            .app-desc {
+                font-size: 14px;
+            }
+        }
+
+
+        .services {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .web-img {
+            height: 230px;
+            width: 300px;
+            border-radius: 10px;
+            flex-basis: 30%;
+        }
+
+
+
+
+
+        .web-img img {
+            height: 230px;
+            width: 300px;
+            border-radius: 10px;
+            border: 5px solid #fff;
+
+        }
+
+        .web-desc {
+            width: 70%;
+            padding-top: 10px;
+            color: black;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+        }
+
+        .app-img {
+            height: 230px;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        .app-img img {
+            height: 230px;
+            width: 300px;
+            border-radius: 10px;
+            border: 5px solid #fff;
+        }
+
+        .app-desc {
+            width: 70%;
+            padding-top: 10px;
+            color: black;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            flex-basis: 70%;
+        }
+
+        .app-desc h3 {
+            color: rgb(211, 28, 28);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+            margin-top: 18px;
+        }
+
+        .web-desc h3 {
+            color: rgb(211, 28, 28);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
+        }
+
+        /* Horizental Line */
+        .styled-line {
+            border: none;
+            border-top: 2px solid #fff;
+            width: 90%;
+            margin: 20px auto;
+            opacity: 0.8;
+        }
+
+        /* footer */
+
+        .foot {
+            width: 100vw;
+            height: auto;
+            background: linear-gradient(rgb(218, 15, 15), rgb(89, 89, 171));
+            color: #fff;
+            font-size: 13px;
+            line-height: 20px;
+        }
+
+        .row {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .col1 {
+            margin-top: 10px;
+            flex-basis: 60%;
+            padding-top: 10px;
+        }
+
+        .col1 h3 {
+            color: white;
+            text-align: center;
+        }
+
+        .col1 p {
+            font-size: medium;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .col {
+            margin-top: 20px;
+            flex-basis: 25%;
+        }
+
+        .col h3 {
+            color: white;
+            text-align: center;
+        }
+
+        .col p {
+            font-size: medium;
+            line-height: 30px;
+            justify-content: center;
+        }
+
+        .feedback-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        ul li {
+            list-style: none;
+            margin-bottom: 8px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .foot .cont-info {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .foot .cont-info a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+            font-size: 19px;
+        }
+
+        .foot .cont-info a:hover {
+            text-decoration: none;
+        }
+
+        .foot .cont-info i {
+            font-size: 22px;
+            padding-right: 12px;
+        }
+
+        .inputbox {
+            position: relative;
+            width: 250px;
+        }
+
+        .inputbox input {
+            position: relative;
+            width: 100%;
+            padding: 20px 10px 10px;
+            background: transparent;
+            outline: none;
+            box-shadow: none;
+            border: none;
+            color: #23242a;
+            font-size: 1em;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+            z-index: 10;
+        }
+
+        .inputbox span {
+            position: absolute;
+            left: 0;
+            padding: 20px 10px 10px;
+            font-size: 1em;
+            color: #8f8f8f;
+            letter-spacing: 00.05em;
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        .inputbox input:valid~span,
+        .inputbox input:focus~span {
+            color: #45f3ff;
+            transform: translateX(-10px) translateY(-34px);
+            font-size: 0, 75em;
+        }
+
+        .inputbox i {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #45f3ff;
+            border-radius: 4px;
+            transition: 0.5s;
+            pointer-events: none;
+            z-index: 9;
+        }
+
+        .inputbox input:valid~i,
+        .inputbox input:focus~i {
+            height: 44px;
+        }
+
+        .a {
+            height: 10px;
+        }
+
+        /* From Uiverse.io by adamgiebl */
+        .bttn {
+            margin-top: 7px;
+            font-family: inherit;
+            font-size: 20px;
+            background: royalblue;
+            color: white;
+            padding: 0.7em 1em;
+            padding-left: 0.9em;
+            display: flex;
+            align-items: center;
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .bttn span {
+            display: block;
+            margin-left: 0.3em;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .bttn svg {
+            display: block;
+            transform-origin: center center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .bttn:hover .svg-wrapper {
+            animation: fly-1 0.6s ease-in-out infinite alternate;
+        }
+
+        .bttn:hover svg {
+            transform: translateX(1.2em) rotate(45deg) scale(1.1);
+        }
+
+        .bttn:hover span {
+            transform: translateX(5em);
+        }
+
+        .bttn:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes fly-1 {
+            from {
+                transform: translateY(0.1em);
+            }
+
+            to {
+                transform: translateY(-0.1em);
+            }
+        }
+
+        .footer1 {
+            height: auto;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer1 p {
+            padding-top: 20px;
+            color: #fff;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+        }
+
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        .footer1 i {
+            color: white;
+            font-size: 30px;
+            align-items: center;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar-nav .nav-item {
+                margin-bottom: 10px;
+            }
+
+            .navbar-toggler {
+                border-color: #ffcc00;
+            }
+
+            .navbar-toggler-icon {
+                background-color: #ffffff;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar {
+                padding: 10px;
+            }
+
+            .navbar-nav {
+                padding-top: 10px;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .animated-logo {
+                width: 50px;
+            }
+
+            .contact-info a {
+                font-size: 13px;
+            }
+
+            .school-name {
+                font-size: 16px;
+            }
+
+            .init h1 {
+                font-size: 24px;
+            }
+
+            .btn {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            .web-img,
+            .app-img {
+                height: 200px;
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .web-desc,
+            .app-desc {
+                width: 100%;
+                font-size: 16px;
+            }
+
+            .foot {
+                font-size: 12px;
+            }
+
+            .row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .col1,
+            .col {
+                flex-basis: 100%;
+                text-align: center;
+            }
+
+            .inputbox input {
+                width: 100%;
+            }
+
+            .inputbox span {
+                font-size: 0.9em;
+            }
+
+            .foot .cont-info a {
+                font-size: 16px;
+            }
+        }
+
+        /* For better responsiveness on very small devices */
+        @media (max-width: 375px) {
+            .navbar-nav .nav-item {
+                margin-bottom: 5px;
+            }
+
+            .init h1 {
+                font-size: 20px;
+            }
+
+            .btn {
+                font-size: 14px;
+            }
+
+            .web-img,
+            .app-img {
+                height: 150px;
+            }
+
+            .web-desc,
+            .app-desc {
+                font-size: 14px;
+            }
+        }
+        .whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.whatsapp-btn img {
+    width: 35px;
+    height: 35px;
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .whatsapp-btn img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .whatsapp-btn img {
+        width: 25px;
+        height: 25px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                <img src="redalpha.gif" alt="Logo" width="50" height="50" class="me-2"> RedAlpha
+            </h5>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav w-100 d-flex justify-content-between">
+                    <li class="nav-item flex-grow-1 text-center"><a class="nav-link" href="index.html"><i
+                                class="fa-solid fa-house"></i>Home</a></li>
+                    <li class="nav-item flex-grow-1 text-center"><a class="nav-link" href="blog.html"><i
+                                class="fa-solid fa-address-card"></i>Blog</a></li>
+                    <li class="nav-item flex-grow-1 text-center"><a class="nav-link" href="index.html"><i
+                                class="fa-solid fa-user-tie"></i>Developers</a>
+                    </li>
+                    <li class="nav-item flex-grow-1 text-center"><a class="nav-link" href="contact.html"><i
+                                class="fa-solid fa-user" style="size: 3rem;"></i>Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="all">
+        <!-- Blog Body -->
+        <div class="container">
+            <div class="init">
+                <h1>Our Blogs</h1>
+                <div class="services">
+                    <div class="web-img">
+                        <img src="web-dev.jpg" alt="Web Development">
+                    </div>
+                    <div class="web-desc">
+                        <h3>Web Development</h3>
+                        <p>At RedAlpha Tech Private Limited, we create custom web solutions that combine innovative
+                            design
+                            with
+                            powerful functionality. Our services ensure responsive, SEO-friendly, and secure websites
+                            that
+                            resonate with your audience. We use cutting-edge technologies to build scalable,
+                            high-performance
+                            sites tailored to your business needs.</p>
+                            <a href="contact.html">
+                        <button class="btn">Try it</button>
+                    </a>
+                    </div>
+                </div>
+                <hr class="styled-line">
+                <div class="services">
+                    <div class="app-desc">
+                        <h3>App Development</h3>
+                        <p>At RedAlpha Tech Private Limited, we develop custom, responsive websites that combine sleek
+                            design with powerful functionality. Our expert team ensures your site is SEO-optimized,
+                            secure,
+                            and built with cutting-edge technologies for a seamless user experience. Let us elevate your
+                            online presence and help you achieve your business goals.
+                        </p>
+                        <a href="contact.html">
+                        <button class="btn">Try it</button>
+                    </a>
+                    </div>
+                    <div class="app-img">
+                        <img src="app-dev.jpg" alt="App Development">
+                    </div>
+                </div>
+                <hr class="styled-line">
+                <div class="services">
+                    <div class="web-img">
+                        <img src="AI & ML.jpg" alt="Web Development">
+                    </div>
+                    <div class="web-desc">
+                        <h3>AI & Machine Learning</h3>
+                        <p>Our AI & ML solutions enable businesses to make data-driven decisions, optimize operations,
+                            and
+                            create personalized experiences for customers. Whether it's predictive analytics,
+                            automation, or
+                            intelligent systems, we bring cutting-edge technology to help you stay ahead of the
+                            competition.
+                            Let us transform your data into actionable insights and powerful results.</p>
+                            <a href="contact.html">
+                        <button class="btn">Try it</button>
+                    </a>
+                    </div>
+                </div>
+                <hr class="styled-line">
+                <div class="services">
+                    <div class="app-desc">
+                        <h3>UI & UX Design</h3>
+                        <p>At RedAlpha Tech, we craft visually appealing and intuitive designs that resonate with users.
+                            Our
+                            expert UI/UX design focuses on seamless user experiences, while our graphics design brings
+                            your
+                            brand to life with creative, high-impact visuals. Let us help you create designs that engage
+                            and
+                            convert.
+                        </p>
+                        <a href="contact.html">
+                        <button class="btn">Try it</button>
+                    </a>
+                    </div>
+                    <div class="app-img">
+                        <img src="UI & UX.jpg" alt="App Development">
+                    </div>
+                </div>
+                <hr class="styled-line">
+                <div class="services">
+                    <div class="web-img">
+                        <img src="Digital-Marketing.jpg" alt="Web Development">
+                    </div>
+                    <div class="web-desc">
+                        <h3>Digital Marketing</h3>
+                        <p>We leverage innovative strategies, SEO, social media, and targeted campaigns to boost your
+                            brand
+                            visibility and drive growth. Our data-driven approach ensures your business stands out and
+                            connects with customers in meaningful ways. Let us help you turn clicks into loyal
+                            customers!
+                        </p>
+                        <a href="contact.html">
+                        <button class="btn">Try it</button>
+                    </a>
+                    </div>
+                </div>
+                <hr class="styled-line">
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="row">
+            <div class="col1">
+                <h3>Contact Us</h3>
+                <p>Feel free to reach out to us for any project inquiries or collaborations.</p>
+                <div class="cont-info">
+                    <a href="mailto:techredalpha@gmail.com"><i
+                            class="fa-solid fa-envelope"></i>techredalpha@gmail.com</a> |
+                    <a href="tel:+916296520890"><i class="fa-solid fa-phone"></i>+91 6296 520 890</a> |
+                    <a href="tel:+919883405873"><i class="fa-solid fa-phone"></i>+91 9883 405 873</a> |
+
+                </div>
+            </div>
+            <div class="col feedback-section">
+                <h3>Feedback</h3>
+                <div class="inputbox">
+                    <input required="required" type="text">
+                    <span>Email</span>
+                    <i></i>
+                </div>
+                <div class="a"></div>
+                <div class="inputbox">
+                    <input required="required" type="text">
+                    <span>Feedback</span>
+                    <i></i>
+                </div>
+                <button class="bttn">
+                    <div class="svg-wrapper-1">
+                        <div class="svg-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path fill="currentColor"
+                                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <span>Send</span>
+                </button>
+            </div>
+                     <!-- WhatsApp Button -->
+         <a href="https://wa.me/6296520890" target="_blank" class="whatsapp-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+        </a>
+        </div>
+        <div class="footer1">
+            <p>&copy; 2024 Redalpha. All Rights Reserved.</p>
+            <div class="icon">
+                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-brands fa-linkedin" style="padding-left: 10px;"></i>
+                <i class="fa-brands fa-facebook" style="padding-left: 10px;"></i>
+                <i class="fa-brands fa-instagram" style="padding-left: 10px;"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+function initializeHoriSelector() {
+    var tabsNewAnim = $('#navbarSupportedContent');
+    var activeItemNewAnim = tabsNewAnim.find('.active');
+    updateHoriSelector(activeItemNewAnim);
+
+    // Attach click event to update selector
+    $("#navbarSupportedContent").on("click", "li", function () {
+        $('#navbarSupportedContent ul li').removeClass("active");
+        $(this).addClass('active');
+        updateHoriSelector($(this));
+    });
+}
+
+
+function updateHoriSelector(activeItem) {
+    if (activeItem.length) {
+        var activeHeight = activeItem.outerHeight(); // outerHeight is more reliable
+        var activeWidth = activeItem.outerWidth();
+        var itemTop = activeItem.position().top;
+        var itemLeft = activeItem.position().left;
+
+        $(".hori-selector").css({
+            "top": itemTop + "px",
+            "left": itemLeft + "px",
+            "height": activeHeight + "px", // Apply exact dimensions
+            "width": activeWidth + "px"
+        });
+    }
+}
+
+
+$(document).ready(function () {
+    // Initialize selector after a slight delay
+    setTimeout(initializeHoriSelector, 100);
+
+    // Adjust on window resize
+    $(window).on('resize', function () {
+        setTimeout(initializeHoriSelector, 500);
+    });
+
+    // Handle navbar toggler for mobile
+    $(".navbar-toggler").click(function () {
+        $(".navbar-collapse").slideToggle(300);
+        setTimeout(initializeHoriSelector, 100);
+    });
+
+    // Manage active class on page load
+    var path = window.location.pathname.split("/").pop() || 'index.html';
+    var target = $('#navbarSupportedContent ul li a[href="' + path + '"]');
+    if (target.length) {
+        target.parent().addClass('active');
+        updateHoriSelector(target.parent());
+    }
+});
+
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

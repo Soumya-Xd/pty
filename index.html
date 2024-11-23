@@ -1,0 +1,2772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedAlpha Tech Private Limited</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Add this in the head section of your HTML file to include Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.0/three.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="icon" href="redalpha.ico" type="image/x-icon">
+  <style>
+    /* Custom CSS */
+    body {
+      font-family: Arial, sans-serif;
+ 
+    }
+ /*----------subhajit-navbar-css------------*/
+/* Navbar Section */
+ /* Transparent Navbar */
+
+
+.navbar-brand, .nav-link {
+  color: #e70c0c !important; /* Set text color to white */
+  font-weight: bold;
+}
+
+.navbar-brand img {
+  height: 50px; /* Adjust logo size as needed */
+}
+
+.navbar-brand:hover, .nav-link:hover {
+  color: #6b0505 !important; /* Hover color for navbar items */
+}
+.navbar {
+    background-color: #004d99;
+    border-bottom: 3px solid #ffcc00;
+    box-shadow: 0 4px 8px skyblue;
+    color: rgb(255, 0, 55);
+    cursor:pointer;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #004d99;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%280, 0, 0, 0.5%29" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+.navbar-nav .nav-link {
+    color: rgb(234, 7, 7);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar-nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffcc00;
+}
+.me-2{
+  margin-right: .0.9rem !important;
+    cursor: pointer !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .contact-info a{
+        font-size: 13px;
+    }
+
+    .school-name{
+        font-size: 16px;
+    }
+
+    .animated-logo{
+        width: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 10px;
+    }
+
+
+
+    .contact-info a{
+        font-size: 13px;
+    }
+
+    .school-name{
+        font-size: 16px;
+    }
+
+    .animated-logo{
+        width: 50px;
+    }
+}
+
+
+.navbar a {
+    color: #fef8f8;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.container {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.navbar a:hover {
+    background-color: #0066cc;
+    color: #ffcc00;
+    border-radius: 5px;
+}
+
+.navbar-toggler {
+    border-color: #ffcc00;
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff;
+}
+
+.nav-item {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.navbar-nav .nav-link a {
+    color: #004d99;
+}
+
+.navbar-nav .nav-link i {
+    font-size: 24px;
+    padding-right: 10px;
+    color: #004d99;
+}
+
+
+/* Active link styling */
+.navbar .nav-link.active {
+    background-color: #f7fb09;
+    color: #004d99;
+    border-radius: 5px;
+}
+
+ 
+    /* Container */
+    .cont{
+      padding-top: 1px;
+    }
+    /* Hero Section */
+    .hero-section {
+      padding-top: 100px;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Background Slideshow */
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+      background-size: cover;
+      background-position: center;
+      animation: slide 15s infinite;
+      transition: transform 0.7s ease;
+    }
+
+  /* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  background-size: 200% 200%; /* Allows smooth gradient animation */
+  text-align: center;
+  overflow: hidden; /* Prevents video from overflowing */
+  animation: gradient-animation 8s infinite; /* Gradient animation */
+}
+
+/* Background Video */
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the video */
+  width: 100%; /* Makes sure the video covers the section */
+  height: 100%; /* Ensures it fills the section */
+  object-fit: cover; /* Makes the video cover the container */
+  z-index: 2; /* Keeps video behind the content */
+}
+
+/* Transparent Mask */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.264); /* Transparent black mask */
+  z-index: 2;
+  border-bottom: 3px solid #ffcc00 ; /* Places the mask above the video but below the text */
+}
+/* Style for Three.js Canvas */
+#threejsCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+/* Text Animation */
+@keyframes text-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    
+    h1 {
+      z-index: 1;  /* Ensure text appears above the video */
+    }
+
+    /* Circular Zoom Effect */
+    .hero-section.zoomed .hero-background {
+      transform: scale(1.3);
+      clip-path: circle(150px at center);
+      transition: transform 0.8s ease, clip-path 0.8s ease;
+    }
+
+    /* Remove Overlay on Zoom */
+    .hero-section.zoomed .hero-overlay {
+      opacity: 0;
+    }
+
+    /* Hero Content Animation */
+    .animated-text {
+      position: relative;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: transparent;
+      background: linear-gradient(90deg, #000005, #030104, #090408, #030607, #070505, #060609, #070407, #f3f1f1, #ffffff);
+      background-size: 200%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: colorOverlay 5s linear infinite;
+      overflow: hidden;
+      mix-blend-mode: overlay;
+    }
+/* Scroll Down Button Styling */
+.scroll-down-btn {
+  position: absolute;
+  bottom: -250px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 25px;
+  border-radius: 56px;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-down-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Scroll Icon */
+.scroll-down-btn span {
+  display: block;
+  animation: bounce 1.5s infinite;
+}
+
+/* Bouncing Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+    /* Mirror Effect */
+    .animated-text::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 100%; /* Position below the original text */
+      left: 0;
+      width: 100%;
+      color: inherit;
+      transform: scaleY(-1); /* Flip vertically for mirror effect */
+      opacity: 0.6;
+      background: inherit;
+      background-clip: text;
+      -webkit-background-clip: text;
+      mix-blend-mode: overlay;
+    }
+
+    /* Animation for Gradient Background */
+    @keyframes colorOverlay {
+      0% { background-position: 0%; }
+      100% { background-position: 200%; }
+    }
+
+    /* Background Slideshow Animation */
+    @keyframes slide {
+      0% { background-image: url('c1.jpg'); }
+      29% { background-image: url('wev.jpg'); }
+      47% { background-image: url('c2.jpg'); }
+      63% { background-image: url('c8.jpg'); }
+      76% { background-image: url('c3.jpg'); }
+
+      100% { background-image: url('c4.jpg'); }
+    }
+
+    /* Other Sections */
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      color: #FF4C4C;
+    }
+
+    .team-member img {
+      border-radius: 50%;
+    }
+
+    .contact-section {
+      background-color: #FF4C4C;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .footer {
+      background: linear-gradient(45deg, #8c1946, #ff4f70);;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    /* Styling for the logo */
+    .navbarlogo {
+      width: 100px;  /* Adjust the width as needed */
+      height: auto;  /* Maintain the aspect ratio */
+    }
+
+/* Services Section */
+#services {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+  text-align: center;
+}
+
+/* Title Styling */
+.section-title {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.services-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.service-card {
+  background: linear-gradient(45deg, #8c1946, #ff4f70);;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Image Styling */
+.service-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Blue Overlay with Content Hidden Initially */
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 123, 255, 0.8);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transform: scale(1.05);
+}
+
+/* Text Styling in Overlay */
+.service-overlay h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.service-overlay p {
+  font-size: 1rem;
+}
+
+/* Hover Effect: Zoom Image and Show Overlay */
+.service-card:hover .service-image img,
+.service-card:active .service-image img {
+  transform: scale(1.1);
+}
+.service-image h4 {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));  /* Dark background for readability */
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin: 0;
+}
+.service-card:hover .service-overlay,
+.service-card:active .service-overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Zoom Overlay with Three.js background */
+.zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9); /* Fallback */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.zoom-overlay.open {
+  opacity: 1;
+}
+
+/* Zoomed image on top of the background */
+.zoomed-image {
+  max-width: 50%;
+  max-height: 50%;
+  z-index: 2;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Airplane animation */
+.airplane {
+  position: absolute;
+  top: 80%;
+  left: -150px; /* Start from off-screen */
+  width: 200px;
+  z-index: 3;
+  transform: translateY(-50%);
+  transition: left 2s ease-in-out;
+}
+
+.airplane.move-in {
+  left: 50%; /* Move to the center */
+}
+
+.airplane.move-out {
+  left: 100%; /* Move off-screen */
+}
+
+/* Role container for the text under the image */
+.role-container {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.role-container.fade-in {
+  opacity: 1;
+}
+
+/* Three.js Canvas with glowing neon effect in the background */
+#threejsCanvas {
+  position: absolute;
+  top: 300px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+
+/* Container for the section */
+#services {
+  position: relative; /* Important for positioning the buttons inside the section */
+}
+
+/* Style for the button container */
+.button-container {
+  position: absolute;
+  bottom: 20px;  /* Position the buttons 20px from the bottom of the section */
+  right: 20px;   /* Position the buttons 20px from the right of the section */
+  display: flex;
+  gap: 10px;     /* Add space between the buttons */
+  z-index: 10;   /* Ensure buttons are on top of other elements */
+}
+
+/* Styling for the slider buttons and pause button */
+.slider-button,
+.pause-button {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 5px;
+}
+
+
+
+/* Styling for the Pause button */
+#pauseButton {
+  background-color: #ff56222b;
+  font-weight: bold;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the slider buttons */
+.slider-button:hover,
+.pause-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Hover effect for the Pause button */
+#pauseButton:hover {
+  background-color: #fa0505;
+}
+
+/* Accessibility: Focus styles */
+.slider-button:focus,
+.pause-button:focus {
+  outline: none;
+  box-shadow: 0 0 4px 2px rgba(65, 2, 255, 0.8);
+}
+
+
+/* Display Multiple Cards at a Time */
+@media (min-width: 768px) {
+  .service-card {
+    width: 300px; /* Increased card width for larger screens */
+    height: 400px; /* Adjusted card height for larger screens */
+  }
+  .services-container {
+    justify-content: space-around;
+  }
+}
+
+
+
+/* Smooth scroll for mobile */
+@media (max-width: 767px) {
+  .services-slider {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  .service-card {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    width: 100vw; /* Full width for mobile view */
+    margin: 0;
+  }
+}
+
+/*==================================================*/
+
+/* Add the mask to the section */
+#our-customers {
+  position: relative;
+  overflow: hidden; /* Ensure that any overflow is hidden */
+}
+
+/* Create the mask overlay */
+#our-customers::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:linear-gradient(45deg, #8c1946, #ff4f70);
+  opacity: 36.7%; /* Semi-transparent black background */
+  z-index: 2; /* Place it above the images */
+}
+
+/* Ensure the images are behind the mask */
+#our-customers .container {
+  position: relative;
+  z-index: 1; /* Keep the content above the mask */
+}
+
+/* Optionally, add some hover effect or custom style for the images */
+#our-customers .col-6 img {
+  transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+
+#our-customers .col-6 img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/*=====================================================*/
+/* About Us Section */
+#about-us {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+}
+
+#about-us .section-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Red Horizontal Line */
+.red-line {
+  border: 0;
+  border-top: 4px solid red;
+  margin: 20px 0;
+}
+
+/* Team Member Styling */
+.team-member {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.team-member img {
+  border-radius: 50%;
+  margin-right: 20px;
+  width: 160px;
+  height: 171px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team-member {
+    justify-content: center;
+  }
+
+  .team-member img {
+    margin-right: 10px;
+    width: 97px;
+    height: 111px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .team-member img {
+    width: 97px;
+    height: 111px;
+  }
+}
+
+/* Style for the zoomable image container */
+/* Octagon Shape with Double Border */
+.image-container {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(
+    30% 0%, 70% 0%, 100% 30%, 100% 70%,
+    70% 100%, 30% 100%, 0% 70%, 0% 30%
+  );
+  border: 4px solid #dd2323;
+  box-shadow: 0 0 10px rgba(183, 58, 58, 0.6), inset 0 0 10px rgba(183, 58, 58, 0.709);
+  cursor: pointer;
+  animation: border-glow 2s infinite;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+  transform: scale(1.1);
+}
+
+@keyframes border-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(183, 135, 58, 0.6), inset 0 0 10px rgba(183, 135, 58, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(183, 135, 58, 0.6), inset 0 0 20px rgba(183, 135, 58, 0.6);
+  }
+}
+
+
+
+/* Tooltip for Interaction */
+.click-me-tooltip {
+  position: absolute;
+  top: -30px;
+  background: #ff6f61;
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.image-container:hover .click-me-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Zoomable images */
+.team-member-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.team-member-img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+/* Mobile and Tablet Responsive */
+@media (max-width: 768px) {
+  /* For tablets and small screens */
+  .image-container {
+    width: 120px; /* Reduce the size for smaller screens */
+    height: 120px;
+  }
+
+  .team-member-img {
+    transform: scale(1.03); /* Slight zoom on hover for small devices */
+  }
+
+  .click-me-tooltip {
+    font-size: 12px; /* Smaller font size for tooltip */
+    padding: 4px 8px; /* Smaller padding */
+  }
+}
+
+@media (max-width: 480px) {
+  /* For mobile screens */
+  .image-container {
+    width: 100px; /* Further reduce size on mobile */
+    height: 100px;
+  }
+
+  .team-member-img {
+    transform: scale(1.1); /* Slightly higher zoom on hover for mobile */
+  }
+
+  .click-me-tooltip {
+    font-size: 10px; /* Even smaller tooltip font */
+    padding: 3px 6px; /* Adjust padding */
+    top: -25px; /* Adjust position */
+  }
+}
+/* Style the zoom overlay */
+.zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.zoom-overlay.open {
+  transform: scale(1); /* Animate zoom opening */
+}
+
+.zoom-overlay img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  border-radius: 10px; /* Optional: rounding the zoomed image */
+}
+
+/* Triangle shape at the bottom of the zoomed image */
+.zoom-overlay .role-container {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.zoom-overlay .role-container:after {
+  content: "";
+  position: absolute;
+  bottom: -20px; /* Distance of triangle from text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #333; /* Triangle pointing down */
+}
+/* Responsive Design for Zoomable Images */
+@media (max-width: 768px) {
+  .image-container {
+    width: 120px; /* Smaller image size for tablets */
+    height: 120px;
+  }
+
+  .zoom-overlay img {
+    max-width: 90%; /* Slightly smaller zoomed image */
+    max-height: 70%; /* Ensure it fits within the screen height */
+  }
+
+  .zoom-overlay .role-container {
+    font-size: 18px; /* Adjust role text size */
+  }
+}
+
+@media (max-width: 576px) {
+  .image-container {
+    width: 100px; /* Smaller image size for mobile */
+    height: 100px;
+  }
+
+  .zoom-overlay img {
+    max-width: 95%; /* Maximize image display on mobile */
+    max-height: 60%;
+  }
+
+  .zoom-overlay .role-container {
+    font-size: 16px; /* Reduce text size for better readability */
+    bottom: 10px; /* Adjust spacing to fit smaller screens */
+  }
+
+  .zoom-overlay .role-container:after {
+    bottom: -15px; /* Reduce triangle distance for smaller screens */
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 15px solid #333; /* Smaller triangle */
+  }
+}
+
+/*====================================*/
+/* Popup Modal - Background */
+.popup-modal {
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 102.5%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  margin-top:70px;
+}
+
+/* Popup Modal - Content */
+.popup-content {
+  background-color: rgba(255, 255, 255, 0.8); /* Transparent effect */
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  width: 326px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Close Button */
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Image in Popup */
+.popup-image {
+    width: 100%;
+    max-width: 205px;
+    height: 130px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+}
+
+/* Link Styling */
+.popup-link {
+  display: inline-block;
+  margin-top: -31px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.popup-link:hover {
+  background-color: #0056b3;
+}
+
+/* Input Group Styling */
+.input-group {
+  margin-top: 4px;
+}
+
+.input-field {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.send-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: rgba(40, 167, 69, 0.8); /* Transparent button */
+}
+
+.send-button:hover {
+  background-color: #218838;
+}
+
+.golden-button {
+  touch-action: manipulation;
+  display: inline-block;
+  outline: none;
+  font-family: inherit;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.3em;
+  height: 2.75em;
+  line-height: 2.5em;
+  text-transform: uppercase;
+  padding: 0 1em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  background-image: linear-gradient(
+    160deg,
+    #a54e07,
+    #b47e11,
+    #fef1a2,
+    #bc881b,
+    #a54e07
+  );
+  border: 1px solid #a55d07;
+  color: rgb(120, 50, 5);
+  text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.golden-button:focus,
+.golden-button:hover {
+  background-size: 150% 150%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  border: 1px solid rgba(165, 93, 7, 0.6);
+  color: rgba(120, 50, 5, 0.8);
+}
+
+.golden-button:active {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+}
+
+/*==============================================*/
+/* From Uiverse.io by mobinkakei */ 
+.cta {
+  padding: 10px 20px;
+  border: none;
+  font-size: 17px;
+  color: #fff;
+  border-radius: 7px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  transition-property: box-shadow;
+}
+
+.cta {
+  background: rgb(220, 70, 36);
+  box-shadow: 0 0 25px rgb(250, 20, 47);
+}
+
+.cta:hover {
+  box-shadow: 0 0 5px rgb(236, 60, 98),
+              0 0 25px rgb(236, 60, 98),
+              0 0 50px rgb(236, 60, 98),
+              0 0 100px rgb(236, 60, 98);
+}
+
+
+
+.span {
+  transform: skewX(15deg);
+}
+
+.second {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+
+.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.cta:hover .three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover .one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover .two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: #fd0909;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+
+/* Mobile responsiveness using media queries */
+@media screen and (max-width: 768px) {
+  .cta {
+    font-size: 18px; /* Decrease font size for mobile */
+    padding: 8px 20px; /* Reduce padding for a smaller button */
+    margin-left: 0; /* Remove left margin for centering */
+    width: auto; /* Ensure the button adjusts to content width */
+    box-shadow: 4px 4px 0 black; /* Smaller box-shadow */
+    transform: none; /* Remove skew effect */
+    justify-content: center; /* Center the content horizontally */
+    margin-left:0px;
+  }
+
+  .cta .second {
+    width: 15px; /* Reduce the size of the second element */
+    margin-left: 0px; /* Adjust margin */
+  }
+
+  .cta .one,
+  .cta .two {
+    transform: translateX(0%); /* Remove the initial translateX for mobile */
+  }
+
+  /* Adjust the hover animations */
+  .cta:hover .three {
+    animation: color_anim 1s infinite 0.3s;
+  }
+
+  .cta:hover .one,
+  .cta:hover .two {
+    animation: color_anim 1s infinite 0.5s;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cta {
+    font-size: 16px; /* Further reduce the font size */
+    padding: 6px 15px; /* Adjust padding to make the button smaller */
+  }
+
+  .cta .second {
+    width: 12px; /* Reduce the size of the second element */
+    margin-left: 0px; /* Adjust margin */
+  }
+
+  .cta .one,
+  .cta .two {
+    transform: translateX(0%); /* Ensure there's no initial movement */
+  }
+
+  .cta:hover .three {
+    animation: color_anim 1s infinite 0.4s;
+  }
+
+  .cta:hover .one,
+  .cta:hover .two {
+    animation: color_anim 1s infinite 0.6s;
+  }
+}
+/*==================================================*/
+
+.btn6 {
+  --color: #f5e50c;
+  --color2: rgb(10, 25, 30);
+  padding: 0.8em 1.75em;
+  background-color: transparent;
+  border-radius: 6px;
+  border: .3px solid var(--color);
+  transition: .5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  font-weight: 300;
+  font-size: 17px;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  color: var(--color);
+ }
+ 
+ .btn6::after, .btn6::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: .5s ease-out;
+  background-color: var(--color);
+ }
+ 
+ .btn6::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+ }
+ 
+ .btn6:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+ }
+ 
+ .btn6:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+ }
+ 
+ .btn6:hover {
+  color: var(--color2);
+ }
+ 
+ .btn6:active {
+  filter: brightness(.7);
+  transform: scale(.98);
+ }
+ /*=================================*/
+ /* footer */
+
+ .foot {
+  width: 100vw;
+  height: auto;
+  background: linear-gradient(rgb(218, 15, 15), rgb(89, 89, 171));
+  color: #fff;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.row {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.col1 {
+  margin-top: 10px;
+  flex-basis: 60%;
+  padding-top: 10px;
+}
+
+.col1 h3 {
+  color: white;
+  text-align: center;
+}
+
+.col1 p {
+  font-size: medium;
+  line-height: 30px;
+  text-align: center;
+}
+
+.col {
+  margin-top: 20px;
+  flex-basis: 25%;
+}
+
+.col h3 {
+  color: white;
+  text-align: center;
+}
+
+.col p {
+  font-size: medium;
+  line-height: 30px;
+  justify-content: center;
+}
+
+.feedback-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+ul li {
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.foot .cont-info {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.foot .cont-info a {
+  text-decoration: none;
+  color: white;
+  margin: 6px 3px;
+  font-size: 19px;
+}
+
+.foot .cont-info a:hover {
+  text-decoration: none;
+}
+
+.foot .cont-info i {
+  font-size: 22px;
+  padding-right: 12px;
+}
+
+.inputbox {
+  position: relative;
+  width: 250px;
+}
+
+.inputbox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  font-size: 1em;
+  color: #8f8f8f;
+  letter-spacing: 00.05em;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputbox input:valid~span,
+.inputbox input:focus~span {
+  color: #45f3ff;
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0, 75em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #45f3ff;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.inputbox input:valid~i,
+.inputbox input:focus~i {
+  height: 44px;
+}
+
+.a {
+  height: 10px;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .col1, .col {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+
+  .col1 p,
+  .col p {
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .inputbox {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .foot .cont-info {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .foot .cont-info a {
+    font-size: 18px;
+    margin: 5px 2px;
+  }
+
+  .foot .cont-info i {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .foot {
+    padding: 10px 0;
+  }
+
+  .row {
+    padding: 0 15px;
+  }
+
+  .inputbox input {
+    font-size: 0.9em;
+    padding: 15px 8px 8px;
+  }
+
+  .foot .cont-info a {
+    font-size: 16px;
+    margin: 4px 2px;
+  }
+
+  .foot .cont-info i {
+    font-size: 16px;
+  }
+
+  .col1 p,
+  .col p {
+    font-size: 17px;
+  }
+}
+/* From Uiverse.io by adamgiebl */
+.bttn {
+  margin-top: 7px;
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.bttn span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.bttn svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.bttn:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.bttn:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.bttn:hover span {
+  transform: translateX(5em);
+}
+
+.bttn:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+      transform: translateY(0.1em);
+  }
+
+  to {
+      transform: translateY(-0.1em);
+  }
+}
+
+.footer1 {
+  height: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer1 p {
+  padding-top: 20px;
+  color: #fff;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.footer1 i {
+  color: white;
+  font-size: 30px;
+  align-items: center;
+}
+/*------------------------------*/
+/* Basic Styles */
+
+
+/* Achievements Section */
+.achievements {
+  padding: 50px 20px;
+}
+
+.section-title {
+  font-size: 2.5em;
+  color: #ff6f61;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.achievement-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.achievement-item {
+  position: relative;
+  background:  linear-gradient(rgb(251 247 247), rgb(245 245 245));
+  border-radius: 10px;
+  padding: 30px 20px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.achievement-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Live Counter */
+.live-counter {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #f84535;
+  animation: bounce 2s infinite;
+}
+
+/* Particle Stars Animation */
+@keyframes starburst {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(5);
+  }
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Star Container */
+.star-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #ff6f61;
+  border-radius: 50%;
+  animation: starburst 1s ease-out forwards;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .achievement-item {
+    width: 150px;
+    padding: 20px;
+  }
+
+  .live-counter {
+    font-size: 2em;
+  }
+}
+/*---------------------*/
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.whatsapp-btn img {
+    width: 35px;
+    height: 35px;
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .whatsapp-btn img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-btn {
+        width: 45px;
+        height: 45px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .whatsapp-btn img {
+        width: 25px;
+        height: 25px;
+    }
+}
+  </style>
+</head>
+<body>
+  
+<!-- Popup Modal -->
+<!-- Popup Modal -->
+<div id="popupModal" class="popup-modal">
+  <div class="popup-content">
+    <!-- Close Button -->
+    <span class="popup-close" onclick="closePopup()">&times;</span>
+    
+    <!-- Image in Popup -->
+    <img src="c7.jpg" alt="Technology Image" class="popup-image">
+    
+    <h2>We Offer Technology at Minimal Cost!</h2>
+    <p>For more details, click the link below:</p>
+    <!-- Link to PDF -->
+    <a href="Pricing List.pdf" target="_blank">
+ 
+<button role="button" class="golden-button">
+  <span class="golden-text">Check Pricing</span>
+</button>
+
+</a>
+  </div>
+</div>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+      <img src="redalpha.gif" alt="Logo" width="50" height="50" class="me-2"> RedAlpha
+    </h5>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 d-flex justify-content-between">
+              <li class="nav-item flex-grow-1 text-center"><a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+              <li class="nav-item flex-grow-1 text-center"><a class="nav-link" href="blog.html"><i class="fa-solid fa-address-card"></i>Blog</a></li>
+              <li class="nav-item flex-grow-1 text-center"><a class="nav-link" href="#about-us"><i class="fa-solid fa-user-tie"></i>Developers</a>
+              </li>
+              <li class="nav-item flex-grow-1 text-center"><a class="nav-link" href="contact.html"><i class="fa-solid fa-user" style="size: 3rem;"></i>Contact Us</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<div class="cont"> 
+
+   <!-- Hero Section -->
+   <!-- Add the Three.js canvas inside the hero section -->
+<section class="hero-section" onclick="toggleZoom()">
+
+  <canvas id="threejsCanvas"></canvas> <!-- Three.js canvas -->
+
+  <div class="hero-background"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="animated-text">Welcome to RedAlpha Tech</h1>
+    <p class="animated-text">We are here to fulfill your criteria</p>
+    <button class="cta" onclick="location.href='#services'">
+      Explore
+    </button>
+    <!-- Scroll Down Button -->
+    <a href="#about-us" class="scroll-down-btn">
+      <span>&#8595;</span>
+    </a>
+  </div>
+</section>
+
+  <section id="services" class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Our Services</h2>
+      <div class="row">
+        <div class="col-12">
+          <div class="services-container">
+            
+
+            
+            <div class="services-slider">
+              <!-- Card 1: Web Development -->
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="web.jpg" alt="Web Development">
+                  <h4>Web Development</h4>
+                </div>
+                <div class="service-overlay">
+                  <h4>Web Development</h4>
+                  <p>We create stunning and responsive websites to boost your online presence.</p>
+
+                  <a href="contact.html">
+                    <button class="btn6">Try Now</button>
+                  </a>
+                  
+                </div>
+              </div>
+      
+              <!-- Card 2: AI & Machine Learning -->
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="ml.jpg" alt="AI & Machine Learning">
+                  <h4>AI & Machine Learning</h4>
+                </div>
+                <div class="service-overlay">
+                  <h4>AI & Machine Learning</h4>
+                  <p>Advanced AI and ML solutions for a smarter future.</p>
+                  <a href="contact.html">
+                    <button class="btn6">Try Now</button>
+                  </a>
+                  
+                </div>
+              </div>
+      
+              <!-- Card 3: App Development -->
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="application.jpg" alt="App Development">
+                  <h4>App Development</h4>
+                </div>
+                <div class="service-overlay">
+                  <h4>App Development</h4>
+                  <p>High-quality mobile applications tailored to your needs.</p>
+                  <a href="contact.html">
+                    <button class="btn6">Try Now</button>
+                  </a>
+                  
+                </div>
+              </div>
+      
+              <!-- Card 4: Video and Photo Editing -->
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="video editor.jpg" alt="Video and Photo Editing">
+                  <h4>Video and Photo Editing</h4>
+                </div>
+                <div class="service-overlay">
+                  <h4>Video and Photo Editing</h4>
+                  <p>Professional video and photo editing services for your media needs.</p>
+                  <a href="contact.html">
+                    <button class="btn6">Try Now</button>
+                  </a>
+                  
+                </div>
+              </div>
+      
+              <!-- Card 5: Graphics Design -->
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="graphicsdesigner.jpg" alt="Graphics Design">
+                  <h4>Graphics Design</h4>
+                </div>
+                <div class="service-overlay">
+                  <h4>Graphics Design</h4>
+                  <p>Creative graphic design solutions to enhance your brand identity.</p>
+                  <a href="contact.html">
+                    <button class="btn6">Try Now</button>
+                  </a>
+                  
+                </div>
+              </div>
+      
+              <!-- Card 6: UI/UX Design -->
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="ui ux.jpg" alt="UI/UX Design">
+                  <h4>UI/UX Design</h4>
+                </div>
+                <div class="service-overlay">
+                  <h4>UI/UX Design</h4>
+                  <p>Exceptional UI/UX design to enhance user experience and engagement.</p>
+                  <a href="contact.html">
+                    <button class="btn6">Try Now</button>
+                  </a>
+                  
+                </div>
+              </div>
+      
+              <!-- Card 7: Digital Marketing -->
+              <div class="service-card">
+                <div class="service-image">
+                  <img src="digitalmarketing.jpg" alt="Digital Marketing">
+                  <h4>Digital Marketing</h4>
+                </div>
+                <div class="service-overlay">
+                  <h4>Digital Marketing</h4>
+                  <p>Boost your brand's visibility with effective digital marketing strategies.</p>
+                  <a href="contact.html">
+                    <button class="btn6">Try Now</button>
+                  </a>
+                  
+                </div>
+              </div>
+            </div>
+
+          
+          </div>
+        </div>
+        
+          
+      </div>
+      
+    </div>
+ <div>
+
+ </div>
+
+
+  <!-- Button Container -->
+  <div class="button-container">
+    <button class="slider-button" id="prevButton"><i class="fas fa-chevron-left"></i></button>
+<button class="pause-button" id="pauseButton"><i class="fas fa-pause"></i></button>
+<button class="slider-button" id="nextButton"><i class="fas fa-chevron-right"></i></button>
+
+  </div>
+</section>
+
+          </section>
+  <!-- Our Customers Section -->
+<section id="our-customers" class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Our WorkSpace</h2>
+    
+    <!-- Row to hold the customer logos -->
+    <div class="row">
+     
+      
+      <!-- Customer 3 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="sastabazar.png" alt="Customer 3" class="img-fluid">
+      </div>
+      
+      <!-- Customer 4 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="smartcomputers.png" alt="Customer 4" class="img-fluid">
+      </div>
+      
+      <!-- Customer 5 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="prime.png" alt="Customer 5" class="img-fluid">
+      </div>
+      
+      <!-- Customer 6 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="kingstone.jpg" alt="Customer 6" class="img-fluid">
+      </div>
+      
+      <!-- Customer 7 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="momskitchen.jpg" alt="Customer 7" class="img-fluid">
+      </div>
+      
+      <!-- Customer 8 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="abacus.jpg" alt="Customer 8" class="img-fluid">
+      </div>
+      
+      <!-- Customer 9 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="pateluniversity.png" alt="Customer 9" class="img-fluid">
+      </div>
+      
+      <!-- Customer 10 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="dentalhospital.png" alt="Customer 10" class="img-fluid">
+      </div>
+      
+      <!-- Customer 11 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="accademy.jpeg" alt="Customer 11" class="img-fluid">
+      </div>
+      
+      <!-- Customer 12 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="college.png" alt="Customer 12" class="img-fluid">
+      </div>
+      
+      <!-- Customer 13 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="hallreal.jpg" alt="Customer 13" class="img-fluid">
+      </div>
+      
+      <!-- Customer 14 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="resturants.png" alt="Customer 14" class="img-fluid">
+      </div>
+      
+      <!-- Customer 15 -->
+      <div class="col-6 col-md-2 mb-4">
+        <img src="starfish.png" alt="Customer 15" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- About Us Section -->
+<section id="about-us" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title text-center">About Us</h2>
+    
+    <!-- Horizontal Red Line -->
+    <hr class="red-line">
+
+    <div class="row mt-5">
+      <!-- Left Side: Our Team Section -->
+    <!-- Our Team Section -->
+<div class="col-md-6">
+  <h3>Our Core Team</h3>
+  <div class="row">
+    <!-- Team Member 1 -->
+    <div class="col-md-6 team-member">
+      <div class="image-container">
+        <img src="soumya1.png" alt="Soumya" class="img-fluid team-member-img zoomable" data-role="Soumya => Developer">
+      </div>
+      <p></p>
+    </div>
+    <!-- Team Member 2 -->
+    <div class="col-md-6 team-member">
+      <div class="image-container">
+        <img src="biplab1.png" alt="Biplab" class="img-fluid team-member-img zoomable" data-role="Biplab => Designer">
+      </div>
+      <p></p>
+    </div>
+    <!-- Team Member 3 -->
+    <div class="col-md-6 team-member">
+      <div class="image-container">
+        <img src="Subhojit1.png" alt="Subhojit" class="img-fluid team-member-img zoomable" data-role="Subhojit => Backend Developer">
+      </div>
+      <p></p>
+    </div>
+    <!-- Team Member 4 -->
+    <div class="col-md-6 team-member">
+      <div class="image-container">
+        <img src="arijit1.png" alt="Arijit" class="img-fluid team-member-img zoomable" data-role="Arijit => Frontend Developer">
+      </div>
+      <p></p>
+    </div>
+    <!-- Team Member 5 -->
+    <div class="col-md-6 team-member">
+      <div class="image-container">
+        <img src="shovandev1.png" alt="Shovandev" class="img-fluid team-member-img zoomable" data-role="Shovandev => Project Manager">
+      </div>
+      <p></p>
+    </div>
+    <!-- Team Member 6 -->
+    <div class="col-md-6 team-member">
+      <div class="image-container">
+        <img src="Puskar1.png" alt="Puskar" class="img-fluid team-member-img zoomable" data-role="Puskar => Tester">
+      </div>
+    
+    </div>
+  </div>
+</div>
+
+
+      <!-- Right Side: Content Section -->
+
+        <div class="col-md-6">
+          <h3>About Our Startup</h3>
+          <p>We are a passionate startup company focused on providing high-quality digital solutions at minimal costs. Our aim is to help businesses of all sizes embrace the digital age through innovative services like web development, mobile app development, and custom software solutions. We believe that great technology doesn't have to come with a high price tag, and we're committed to offering cost-effective solutions that drive growth and success for our clients.</p>
+          <p>Our team of experts works closely with clients to deliver personalized services that meet their specific needs. Whether you're a startup looking for your first website or a large organization seeking a scalable app, we have the experience and skills to make your ideas come to life.</p>
+          <p>At our core, we are dedicated to providing excellent customer service, delivering timely results, and building long-term relationships with our clients.</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+</div>
+<section class="achievements">
+  <h1 class="section-title">Our Achievements</h1>
+  <div class="achievement-container">
+    <div class="achievement-item" data-count="300">
+      <div class="animation-canvas"></div>
+      <h2 class="live-counter">0</h2>
+      <p>Total Projects</p>
+    </div>
+    <div class="achievement-item" data-count="72">
+      <div class="animation-canvas"></div>
+      <h2 class="live-counter">0</h2>
+      <p>Total Clients</p>
+    </div>
+    <div class="achievement-item" data-count="4">
+      <div class="animation-canvas"></div>
+      <h2 class="live-counter">0</h2>
+      <p>Awards Taken</p>
+    </div>
+    <div class="achievement-item" data-count="70">
+      <div class="animation-canvas"></div>
+      <h2 class="live-counter">0</h2>
+      <p>Client Satisfaction</p>
+    </div>
+    <div class="achievement-item" data-count="800">
+      <div class="animation-canvas"></div>
+      <h2 class="live-counter">0</h2>
+      <p>Followers</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+ 
+<div class="foot">
+  <div class="row">
+      <div class="col1">
+          <h3>Contact Us</h3>
+          <p>Feel free to reach out to us for any project inquiries or collaborations.</p>
+          <div class="cont-info">
+              <a href="mailto:techredalpha@gmail.com"><i
+                      class="fa-solid fa-envelope"></i>techredalpha@gmail.com</a> |
+              <a href="tel:+916296520890"><i class="fa-solid fa-phone"></i>+91 6296 520 890</a> |
+              <a href="tel:+919883405873"><i class="fa-solid fa-phone"></i>+91 9883 405 873</a> |
+  
+          </div>
+      </div>
+      <div class="col feedback-section">
+          <h3>Feedback</h3>
+          <div class="inputbox">
+              <input required="required" type="text">
+              <span>Email</span>
+              <i></i>
+          </div>
+          <div class="a"></div>
+          <div class="inputbox">
+              <input required="required" type="text">
+              <span>Feedback</span>
+              <i></i>
+          </div>
+          <button class="bttn">
+              <div class="svg-wrapper-1">
+                  <div class="svg-wrapper">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                          <path fill="none" d="M0 0h24v24H0z"></path>
+                          <path fill="currentColor"
+                              d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                          </path>
+                      </svg>
+                  </div>
+              </div>
+              <span>Send</span>
+          </button>
+      </div>
+  </div>
+      <!-- WhatsApp Button -->
+      <a href="https://wa.me/6296520890" target="_blank" class="whatsapp-btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+  <div class="footer1">
+      <p>&copy; 2024 Redalpha. All Rights Reserved.</p>
+      <div class="icon">
+          <i class="fa-solid fa-envelope"></i>
+          <i class="fa-brands fa-linkedin" style="padding-left: 10px;"></i>
+          <i class="fa-brands fa-facebook" style="padding-left: 10px;"></i>
+          <i class="fa-brands fa-instagram" style="padding-left: 10px;"></i>
+      </div>
+  </div>
+</div>
+
+  
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- JavaScript for Zoom Effect Toggle -->
+    <script>
+       function toggleZoom() {
+        document.querySelector('.hero-section').classList.toggle('zoomed');
+      }
+     const canvas = document.getElementById('threejsCanvas');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
+document.body.appendChild(renderer.domElement);
+
+// Add glowing particles
+const particleCount = 500;
+const particlesGeometry = new THREE.BufferGeometry();
+const particlesMaterial = new THREE.PointsMaterial({
+  color: 0xffffff,
+  size: 0.5,
+  transparent: true,
+  opacity: 0.8,
+});
+
+const positions = [];
+for (let i = 0; i < particleCount; i++) {
+  positions.push(
+    (Math.random() - 0.5) * 100,
+    (Math.random() - 0.5) * 100,
+    (Math.random() - 0.5) * 100
+  );
+}
+particlesGeometry.setAttribute(
+  'position',
+  new THREE.Float32BufferAttribute(positions, 3)
+);
+const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+scene.add(particles);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0x404040, 2);
+scene.add(ambientLight);
+
+const pointLight = new THREE.PointLight(0xffffff, 1.5);
+pointLight.position.set(50, 50, 50);
+scene.add(pointLight);
+
+// Camera position
+camera.position.z = 50;
+
+// Animation loop
+function animate() {
+  requestAnimationFrame(animate);
+
+  // Rotate particles
+  particles.rotation.x += 0.002;
+  particles.rotation.y += 0.002;
+
+  renderer.render(scene, camera);
+}
+animate();
+
+// Adjust canvas size on window resize
+window.addEventListener('resize', () => {
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+});
+
+      let slider = document.querySelector('.services-slider');
+let cards = Array.from(document.querySelectorAll('.service-card'));
+let currentIndex = 0;
+let slideInterval;
+let cardWidth = cards[0].offsetWidth;
+
+// Check if in mobile view
+function isMobileView() {
+    return window.innerWidth <= 767;
+}
+
+// Function to set up clones only as needed for smooth transitions
+function setupClones() {
+    // Clear existing clones to reset
+    slider.innerHTML = '';
+    cards.forEach(card => slider.appendChild(card));
+
+    if (isMobileView()) {
+        // On mobile, add only one clone of the first and last cards for seamless looping
+        slider.appendChild(cards[0].cloneNode(true));
+        slider.insertBefore(cards[cards.length - 1].cloneNode(true), cards[0]);
+    } else {
+        // For desktop, add multiple clones as initially done
+        cards.slice(0, 7).forEach(card => slider.appendChild(card.cloneNode(true)));
+        cards.slice(-7).reverse().forEach(card => slider.insertBefore(card.cloneNode(true), cards[0]));
+    }
+
+    // Recalculate cardWidth after adjusting clones
+    cardWidth = cards[0].offsetWidth + (isMobileView() ? 0 : 40); 
+    slider.style.transform = `translateX(-${(isMobileView() ? cardWidth : cardWidth * 7)}px)`;
+    currentIndex = 0;
+}
+
+// Move slides with smooth looping logic
+function moveSlide(direction) {
+    currentIndex += direction;
+    slider.style.transition = 'transform 0.5s ease';
+    slider.style.transform = `translateX(-${(currentIndex + (isMobileView() ? 1 : 7)) * cardWidth}px)`;
+
+    slider.addEventListener('transitionend', () => {
+        // Handle looping based on view
+        if (isMobileView() && (currentIndex >= cards.length || currentIndex < 0)) {
+            currentIndex = currentIndex >= cards.length ? 0 : cards.length - 1;
+            slider.style.transition = 'none';
+            slider.style.transform = `translateX(-${cardWidth}px)`;
+        } else if (!isMobileView() && (currentIndex >= cards.length || currentIndex < 0)) {
+            currentIndex = currentIndex >= cards.length ? 0 : cards.length - 7;
+            slider.style.transition = 'none';
+            slider.style.transform = `translateX(-${(currentIndex + 7) * cardWidth}px)`;
+        }
+    }, { once: true });
+}
+
+// Start the slider with appropriate interval for mobile/desktop
+function startSlider() {
+    const intervalTime = isMobileView() ? 2000 : 5000;
+    slideInterval = setInterval(() => moveSlide(1), intervalTime);
+}
+
+// Initial setup and event listeners for responsiveness
+window.addEventListener('resize', () => {
+    clearInterval(slideInterval); // Clear existing interval
+    setupClones(); // Set up clones again based on new screen size
+    startSlider(); // Restart slider with new settings
+});
+
+setupClones(); // Initial setup of clones
+startSlider(); // Start sliding
+
+
+// Recalculate card width on window resize for responsiveness
+window.addEventListener('resize', recalculateCardWidth);
+
+function recalculateCardWidth() {
+    cardWidth = cards[0].offsetWidth + (isMobileView() ? 0 : 40);
+    setupClones();
+}
+
+
+
+// Recalculate card width on window resize for responsiveness
+window.addEventListener('resize', recalculateCardWidth);
+
+document.addEventListener('DOMContentLoaded', function () {
+  const images = document.querySelectorAll('.zoomable');
+
+  images.forEach((image) => {
+    image.addEventListener('click', () => {
+      // Create zoom overlay
+      const overlay = document.createElement('div');
+      overlay.classList.add('zoom-overlay');
+
+      // Create Three.js canvas for the rain and thunderstorm background
+      const threejsCanvas = document.createElement('canvas');
+      threejsCanvas.id = 'threejsCanvas';
+      overlay.appendChild(threejsCanvas);
+
+      // Create zoomed image and place it in front of the particles
+      const zoomedImage = document.createElement('img');
+      zoomedImage.src = image.src;
+      zoomedImage.classList.add('zoomed-image');
+
+      // Create the role container with data-role attribute
+      const roleContainer = document.createElement('div');
+      roleContainer.classList.add('role-container');
+      roleContainer.innerHTML = image.getAttribute('data-role'); // Role comes from data-role attribute
+
+      overlay.appendChild(zoomedImage);
+      overlay.appendChild(roleContainer);
+
+      // Create airplane element
+      const airplane = document.createElement('img');
+      airplane.src = 'plane.png'; // Replace with your airplane image URL
+      airplane.classList.add('airplane');
+
+      overlay.appendChild(airplane);
+
+      document.body.appendChild(overlay);
+
+      // Initialize Three.js animation for the rain and thunderstorm
+      initThreeJsAnimation(threejsCanvas);
+
+      // Open the overlay with animation
+      setTimeout(() => overlay.classList.add('open'), 10);
+
+      // Start airplane animation (cover the image)
+      setTimeout(() => {
+        airplane.classList.add('move-in');
+      }, 300);
+
+      // After airplane moves in, display the name and role
+      setTimeout(() => {
+        roleContainer.classList.add('fade-in');  // Add animation class for name and role
+      }, 2500); // Adjust this based on the airplane's animation time
+
+      // Close the overlay when clicked and reverse the airplane animation
+      overlay.addEventListener('click', () => {
+        airplane.classList.remove('move-in');
+        airplane.classList.add('move-out');
+        setTimeout(() => {
+          overlay.classList.remove('open');
+          setTimeout(() => {
+            overlay.remove();
+          }, 300); // Delay for closing animation
+        }, 2000); // Wait for airplane to finish moving out
+      });
+    });
+  });
+
+  // Three.js animation function for rain and thunderstorm
+  function initThreeJsAnimation(canvas) {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    // Create rain particles
+    const rainCount = 500;
+    const rainGeometry = new THREE.BufferGeometry();
+    const rainMaterial = new THREE.PointsMaterial({
+      color: 0x00bfff, // Light blue for raindrops
+      size: 0.2,
+      transparent: true,
+    });
+
+    const rainPositions = [];
+    for (let i = 0; i < rainCount; i++) {
+      rainPositions.push(
+        (Math.random() - 0.5) * 200,
+        Math.random() * 200, // Random start positions for rain
+        (Math.random() - 0.5) * 200
+      );
+    }
+    rainGeometry.setAttribute(
+      'position',
+      new THREE.Float32BufferAttribute(rainPositions, 3)
+    );
+
+    const rain = new THREE.Points(rainGeometry, rainMaterial);
+    scene.add(rain);
+
+    // Lightning effect
+    const lightningMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
+    const lightningGeometry = new THREE.BufferGeometry();
+    const lightningLine = new THREE.Line(lightningGeometry, lightningMaterial);
+    scene.add(lightningLine);
+
+    function createLightning() {
+      const vertices = [];
+      const startX = (Math.random() - 0.5) * 100;
+      const startY = (Math.random() - 0.5) * 100;
+      vertices.push(startX, startY, 0);
+
+      for (let i = 0; i < 10; i++) {
+        const offsetX = (Math.random() - 0.5) * 20;
+        const offsetY = -10; // Move downward
+        const lastX = vertices[vertices.length - 3];
+        const lastY = vertices[vertices.length - 2];
+        vertices.push(lastX + offsetX, lastY + offsetY, 0);
+      }
+
+      lightningGeometry.setAttribute(
+        'position',
+        new THREE.Float32BufferAttribute(vertices, 3)
+      );
+
+      setTimeout(() => {
+        lightningGeometry.dispose();
+        lightningGeometry.setAttribute('position', new THREE.Float32BufferAttribute([], 3));
+      }, 100); // Lightning disappears quickly
+    }
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0x404040, 1);
+    scene.add(ambientLight);
+
+    const pointLight = new THREE.PointLight(0x00bfff, 2, 200);
+    pointLight.position.set(50, 50, 50);
+    scene.add(pointLight);
+
+    // Camera position
+    camera.position.z = 100;
+
+    // Animation loop with rain and thunderstorm effect
+    let pulse = 0;
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // Simulate rain falling by updating Y positions
+      const rainArray = rain.geometry.attributes.position.array;
+      for (let i = 1; i < rainArray.length; i += 3) {
+        rainArray[i] -= 1; // Move the raindrops down
+        if (rainArray[i] < -100) {
+          rainArray[i] = Math.random() * 200; // Reset raindrops to top
+        }
+      }
+      rain.geometry.attributes.position.needsUpdate = true;
+
+      // Random lightning every 2 seconds
+      if (Math.random() > 0.98) {
+        createLightning(); // Randomly create lightning bolts
+      }
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+    });
+  }
+});
+
+
+// Function to open the modal when the page loads
+window.onload = function() {
+  openPopup();
+};
+
+// Function to open the popup modal
+function openPopup() {
+  document.getElementById('popupModal').style.display = 'flex';
+}
+
+// Function to close the popup modal
+function closePopup(event) {
+  // Check if the click happened outside of the modal content (the card)
+  if (event && event.target === document.getElementById('popupModal')) {
+    document.getElementById('popupModal').style.display = 'none';
+  } else if (!event) {
+    document.getElementById('popupModal').style.display = 'none';
+  }
+}
+
+
+function isMobileView() {
+    return window.innerWidth <= 767;
+}
+
+function setupSlider() {
+    slider.style.transition = 'none'; // Disable transition initially
+    currentIndex = 0; // Reset index
+
+    if (isMobileView()) {
+        slider.style.transform = `translateX(0)`; // Reset to the start for mobile
+    } else {
+        const cardWidth = cards[0].offsetWidth + 40;
+        slider.style.transform = `translateX(-${cardWidth * 7}px)`; // Offset for desktop
+    }
+}
+
+function moveSlide(direction) {
+    if (isMobileView()) {
+        // Only scroll to next element for mobile
+        currentIndex = (currentIndex + direction + cards.length) % cards.length;
+        slider.scrollTo({
+            left: currentIndex * slider.offsetWidth,
+            behavior: 'smooth'
+        });
+    } else {
+        // Desktop logic remains as before
+        const cardWidth = cards[0].offsetWidth + 40;
+        currentIndex += direction;
+        slider.style.transition = 'transform 0.5s ease';
+        slider.style.transform = `translateX(-${(currentIndex + 7) * cardWidth}px)`;
+
+        // Reset if at end
+        slider.addEventListener('transitionend', () => {
+            if (currentIndex >= cards.length) {
+                currentIndex = 0;
+                slider.style.transition = 'none';
+                slider.style.transform = `translateX(-${cardWidth * 7}px)`;
+            } else if (currentIndex < 0) {
+                currentIndex = cards.length - 7;
+                slider.style.transition = 'none';
+                slider.style.transform = `translateX(-${(cards.length) * cardWidth}px)`;
+            }
+        }, { once: true });
+    }
+}
+
+function startSlider() {
+    const intervalTime = isMobileView() ? 2000 : 5000;
+    slideInterval = setInterval(() => moveSlide(1), intervalTime);
+}
+
+window.addEventListener('resize', () => {
+    clearInterval(slideInterval);
+    setupSlider();
+    startSlider();
+});
+
+// Initial setup and start
+setupSlider();
+startSlider();
+// Pause and resume slider functionality
+let isPaused = false;
+function pauseSlider() {
+    isPaused = !isPaused;
+
+    if (isPaused) {
+        clearInterval(slideInterval); // Pause the slider by clearing the interval
+        pauseButton.innerHTML = '<i class="fas fa-play"></i>'; // Show play icon
+    } else {
+        startSlider(); // Resume the slider
+        pauseButton.innerHTML = '<i class="fas fa-pause"></i>'; // Show pause icon
+    }
+}
+
+// Start the auto-slide function
+function startSlider() {
+    // Clear any existing interval before setting a new one
+    clearInterval(slideInterval);
+    slideInterval = setInterval(() => {
+        if (!isPaused) {
+            moveSlide(1);
+        }
+    }, 5000); // Set your desired interval time here
+}
+
+// Button event listeners for previous, next, and pause
+const prevButton = document.getElementById('prevButton');
+const nextButton = document.getElementById('nextButton');
+const pauseButton = document.getElementById('pauseButton');
+
+prevButton.addEventListener('click', () => {
+    clearInterval(slideInterval); // Clear interval to prevent auto-slide interference
+    moveSlide(-1);
+    startSlider(); // Restart the interval after manual slide
+});
+
+nextButton.addEventListener('click', () => {
+    clearInterval(slideInterval); // Clear interval to prevent auto-slide interference
+    moveSlide(1);
+    startSlider(); // Restart the interval after manual slide
+});
+
+pauseButton.addEventListener('click', pauseSlider);
+
+// Start the slider initially
+startSlider();
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Live Counter Animation
+  const counters = document.querySelectorAll(".live-counter");
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.parentElement.getAttribute("data-count");
+      const current = +counter.innerText;
+      const increment = Math.ceil(target / 100); // Adjust speed
+
+      if (current < target) {
+        counter.innerText = current + increment;
+        setTimeout(updateCount, 30); // Adjust interval
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCount();
+  });
+
+  // Card Click Effect
+  const items = document.querySelectorAll(".achievement-item");
+  items.forEach(item => {
+    item.addEventListener("click", () => {
+      // Create stars
+      for (let i = 0; i < 20; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.animationDuration = `${Math.random() + 0.5}s`;
+        item.appendChild(star);
+
+        // Remove star after animation
+        setTimeout(() => star.remove(), 1000);
+      }
+
+      // Zoom effect
+      item.style.transform = "scale(1.2)";
+      setTimeout(() => {
+        item.style.transform = "scale(1)";
+      }, 500);
+    });
+  });
+});
+function initializeHoriSelector() {
+    var tabsNewAnim = $('#navbarSupportedContent');
+    var activeItemNewAnim = tabsNewAnim.find('.active');
+    updateHoriSelector(activeItemNewAnim);
+
+    // Attach click event to update selector
+    $("#navbarSupportedContent").on("click", "li", function () {
+        $('#navbarSupportedContent ul li').removeClass("active");
+        $(this).addClass('active');
+        updateHoriSelector($(this));
+    });
+}
+
+
+function updateHoriSelector(activeItem) {
+    if (activeItem.length) {
+        var activeHeight = activeItem.outerHeight(); // outerHeight is more reliable
+        var activeWidth = activeItem.outerWidth();
+        var itemTop = activeItem.position().top;
+        var itemLeft = activeItem.position().left;
+
+        $(".hori-selector").css({
+            "top": itemTop + "px",
+            "left": itemLeft + "px",
+            "height": activeHeight + "px", // Apply exact dimensions
+            "width": activeWidth + "px"
+        });
+    }
+}
+
+
+$(document).ready(function () {
+    // Initialize selector after a slight delay
+    setTimeout(initializeHoriSelector, 100);
+
+    // Adjust on window resize
+    $(window).on('resize', function () {
+        setTimeout(initializeHoriSelector, 500);
+    });
+
+    // Handle navbar toggler for mobile
+    $(".navbar-toggler").click(function () {
+        $(".navbar-collapse").slideToggle(300);
+        setTimeout(initializeHoriSelector, 100);
+    });
+
+    // Manage active class on page load
+    var path = window.location.pathname.split("/").pop() || 'index.html';
+    var target = $('#navbarSupportedContent ul li a[href="' + path + '"]');
+    if (target.length) {
+        target.parent().addClass('active');
+        updateHoriSelector(target.parent());
+    }
+});
+
+
+    </script>
+
+
+
+</body>
+</html>
