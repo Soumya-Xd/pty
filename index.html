@@ -2155,34 +2155,37 @@ ul li a {
   
           </div>
       </div>
+         </div>
       <div class="col feedback-section">
-          <h3>Feedback</h3>
-          <div class="inputbox">
-              <input required="required" type="text">
-              <span>Email</span>
-              <i></i>
-          </div>
-          <div class="a"></div>
-          <div class="inputbox">
-              <input required="required" type="text">
-              <span>Feedback</span>
-              <i></i>
-          </div>
-          <button class="bttn">
-              <div class="svg-wrapper-1">
-                  <div class="svg-wrapper">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                          <path fill="none" d="M0 0h24v24H0z"></path>
-                          <path fill="currentColor"
-                              d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
-                          </path>
-                      </svg>
-                  </div>
-              </div>
-              <span>Send</span>
-          </button>
-      </div>
-  </div>
+        <h3>Feedback</h3>
+        <!-- Start of Form -->
+        <form id="feedbackForm" onsubmit="submitForm(event)">
+            <div class="inputbox">
+                <input required="required" type="text" name="email">
+                <span>Email</span>
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input required="required" type="text" name="feedback">
+                <span>Feedback</span>
+                <i></i>
+            </div>
+            <button class="bttn" name="submit" type="submit">
+                <div class="svg-wrapper-1">
+                    <div class="svg-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                            <path fill="currentColor"
+                                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <span>Send</span>
+            </button>
+        </form>
+        <!-- End of Form -->
+    </div>
       <!-- WhatsApp Button -->
       <a href="https://wa.me/6296520890" target="_blank" class="whatsapp-btn">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
@@ -2763,6 +2766,32 @@ $(document).ready(function () {
     }
 });
 
+document.getElementById('feedbackForm').addEventListener('submit', async function (event) {
+      event.preventDefault(); // Prevent form from reloading the page
+
+      const form = event.target;
+      const formData = new FormData(form);
+      const url = 'https://script.google.com/macros/s/AKfycbye2I5zZuqmnty15WbXtg_RFlc2DkUEZ6dyLV7f2pCSmNOst9UAm3D0--l_30w7Ulp3Tg/exec'; // Replace with your Google Apps Script web app URL
+
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (result.result === 'success') {
+          // Show a popup message
+          alert('Thank you for submitting the form!');
+          form.reset(); // Clear the form after submission
+        } else {
+          alert('Error submitting the form: ' + result.error);
+        }
+      } catch (error) {
+        alert('Error: ' + error.message);
+      }
+    });
 
     </script>
 
