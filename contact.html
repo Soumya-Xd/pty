@@ -338,28 +338,24 @@ body {
 
   <!-- Contact Form -->
   <div class="container">
-    <form class="form">
-      <div class="descr">Contact us</div>
+      <form class="form" name="submit-to-google-sheet" id="contactForm">
+      <div class="descr">Contact Us</div>
 
-      <!-- First Name -->
       <div class="input">
-        <input required autocomplete="off" type="text" name="name" id="name" />
+        <input required autocomplete="off" type="text" name="name" id="name">
         <label for="name">First Name</label>
       </div>
 
-      <!-- Email -->
       <div class="input">
-        <input required autocomplete="off" type="email" name="email" id="email" />
+        <input required autocomplete="off" type="email" name="email" id="email">
         <label for="email">E-mail</label>
       </div>
 
-      <!-- Phone Number -->
       <div class="input">
-        <input required autocomplete="off" type="tel" name="phone" id="phone" />
+        <input required autocomplete="off" type="tel" name="phone" id="phone">
         <label for="phone">Phone Number</label>
       </div>
 
-      <!-- Service Dropdown -->
       <div class="input">
         <select name="service" id="service" required>
           <option value="" disabled selected></option>
@@ -375,44 +371,20 @@ body {
         <label for="service">Service</label>
       </div>
 
-      <!-- Custom Message -->
       <div class="input">
         <textarea autocomplete="off" name="message" id="message" placeholder="Custom Message (Optional)"></textarea>
       </div>
 
-      <!-- Submit Button -->
-   
-<button href="#" class="button" style="--clr: #7808d0">
-  <span class="button__icon-wrapper">
-    <svg
-      viewBox="0 0 14 15"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="button__icon-svg"
-      width="10"
-    >
-      <path
-        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-        fill="currentColor"
-      ></path>
-    </svg>
-
-    <svg
-      viewBox="0 0 14 15"
-      fill="none"
-      width="10"
-      xmlns="http://www.w3.org/2000/svg"
-      class="button__icon-svg button__icon-svg--copy"
-    >
-      <path
-        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
-        fill="currentColor"
-      ></path>
-    </svg>
-  </span>
-Submit Now
-</button>
-
+      <button class="button" id="submit" style="--clr: #7808d0">
+        <span class="button__icon-wrapper">
+          <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="button__icon-svg" width="10">
+            <path d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" fill="currentColor"></path>
+          </svg>
+        </span>
+        Submit Now
+      </button>
+    </form>
+  </div>
     </form>
          <!-- WhatsApp Button -->
          <a href="https://wa.me/6296520890" target="_blank" class="whatsapp-btn">
@@ -547,7 +519,27 @@ Submit Now
 
     // Start Animation
     animate();
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw-ecHIEl0tIuO_JMFoW1R0Z6NZtO8xiX2yzkxKDAbvX7PoqiV3YECNZDHMO-MbWZfm/exec'; // Replace with your Google Apps Script URL
+    const form = document.getElementById('contactForm');
 
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(scriptURL, { method: 'POST', body: formData });
+
+        const result = await response.json();
+        if (result.result === 'success') {
+          alert('Thank you for submitting the form!');
+          form.reset(); // Reset the form after submission
+        } else {
+          alert('Error: ' + result.error);
+        }
+      } catch (error) {
+        alert('Submission failed! ' + error.message);
+      }
+    });
   </script>
 </body>
 </html>
